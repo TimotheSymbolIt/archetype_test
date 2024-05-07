@@ -7,4 +7,8 @@ import * as userController from "../controller/userController.js";
 
 ROUTER.get("/", userController.getAllUsers);
 
-export default ROUTER
+ROUTER.post("/add", userController.addUser)
+
+ROUTER.post("/delete", userController.deleteAllUsers)
+
+export default ROUTER;

@@ -2,13 +2,9 @@ import express from "express";
 // import cors from "cors";
 const app = express();
 const port = 3000;
-import userRoutes from './routes/userRoutes.js'
+import userRoutes from "./routes/userRoutes.js";
 
-app.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' })
-})
-
-app.use('/users', userRoutes)
+app.use("/users", userRoutes);
 
 app.listen(port, () => {
 	console.log(`App running on port ${port}.`);

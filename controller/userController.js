@@ -17,13 +17,14 @@ async function addUser(req, res, next) {
 		next();
 	}
 }
-async function deleteAllUsers(req, res, next) {
+async function deleteAUser(req, res, next) {
 	try {
-		const response = await userService.deleteAllUsers(req, res, next);
+		console.log("controller");
+		const response = await userService.deleteAUser(req, res, next);
 		return response;
 	} catch (error) {
 		next();
 	}
 }
 
-export { getAllUsers, addUser, deleteAllUsers };
+export { getAllUsers, addUser, deleteAUser };

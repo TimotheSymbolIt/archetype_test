@@ -5,6 +5,7 @@ import {
 	getDocs,
 	addDoc,
 	deleteDoc,
+	doc,
 } from "firebase/firestore/lite";
 
 async function getAllUsers(req, res, next) {
@@ -62,14 +63,14 @@ async function addUser(req, res, next) {
 	}
 }
 
-async function deleteAllUsers(req, res, next) {
+async function deleteAUser(req, res, next) {
 	try {
-		await deleteDoc(doc(firebase.firebaseDb, "users"));
-
+		await deleteDoc(doc(firebase.firebaseDb, "test", "1"));
 		return res.status(201).json("OK, c'est supprimé");
 	} catch (error) {
+		console.log(error);
 		next();
 	}
 }
 
-export { getAllUsers, addUser, deleteAllUsers };
+export { getAllUsers, addUser, deleteAUser };

@@ -9,6 +9,6 @@ ROUTER.get("/", userController.getAllUsers);
 
 ROUTER.post("/add", userController.addUser)
 
-ROUTER.post("/delete", userController.deleteAllUsers)
+ROUTER.delete("/delete", userController.deleteAUser)
 
 export default ROUTER;

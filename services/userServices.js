@@ -64,8 +64,9 @@ async function addUser(req, res, next) {
 }
 
 async function deleteAUser(req, res, next) {
+	const id = req.params.id;
 	try {
-		await deleteDoc(doc(firebase.firebaseDb, "test", "1"));
+		await deleteDoc(doc(firebase.firebaseDb, "test", id));
 		return res.status(201).json("OK, c'est supprimé");
 	} catch (error) {
 		console.log(error);
